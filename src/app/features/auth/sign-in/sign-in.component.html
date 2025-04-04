@@ -1,0 +1,28 @@
+<div class="adjust-login">
+  <form [formGroup]="signInForm" class="carForm">
+    <div>
+      <div fxLayoutAlign="center center">
+        <img src="logo_pitang.png" alt="Logo" width="70%" />
+      </div>
+      <p-floatLabel>
+        <input fxFlex id="login" type="text" pInputText formControlName="login" />
+        <label for="login">Login</label>
+      </p-floatLabel>
+      <p-floatLabel>
+        <input fxFlex id="password" type="password" pInputText formControlName="password" />
+        <label for="password">Password</label>
+      </p-floatLabel>
+      <div fxLayoutAlign="center">
+        <button
+          style="width: 60%"
+          fxLayoutAlign="center"
+          type="button"
+          pButton
+          (click)="login()">
+          Sign In
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+<p-toast></p-toast>

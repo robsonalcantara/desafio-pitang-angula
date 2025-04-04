@@ -1,0 +1,48 @@
+<app-car-form [editCar]="editCar" (updateCarList)="getCars()"></app-car-form>
+
+<div class="adjust-table-width">
+  <p-table [columns]="cols" [value]="cars" [paginator]="true" [rowsPerPageOptions]="[5, 10, 20]" [rows]="10">
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+      </tr>
+    </ng-template>
+
+    <ng-template pTemplate="body" let-rowData let-car>
+      <tr>
+        <td>{{ car.year }}</td>
+        <td>{{ car.licensePlate }}</td>
+        <td>{{ car.model }}</td>
+        <td>{{ car.color }}</td>
+         <!-- Checkbox para indicar se está em uso -->
+         <td>
+          <p-checkbox [binary]="true" [(ngModel)]="car.usage" (onChange)="toggleCarUsage(car)"></p-checkbox>
+        </td>
+
+        <!-- Contador de quantas vezes o carro foi utilizado -->
+        <td>{{ car.usageCount || 0 }}</td>
+
+        <td>
+          <button
+            type="button"
+            pButton
+            icon="pi pi-pencil"
+            (click)="editCarById(car)">
+          </button>
+        </td>
+        <td>
+          <button
+            type="button"
+            pButton
+            severity="danger"
+            icon="pi pi-trash"
+            (click)="deleteCar(car)">
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+<p-toast></p-toast>

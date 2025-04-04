@@ -1,0 +1,37 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.css";
+
+p-floatlabel {
+  margin: 5px;
+}
+
+.input-container {
+  margin: 5px;
+}
+
+.adjust-table-width {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 40px;
+}
+
+.adjust-login {
+  margin: 10rem 40%;
+}
+
+button[p-button]{
+  background-color:  #cf6610;
+  color: white; 
+  width: 120px; /* Reduzindo o tamanho do botão */
+  height: 40px; /* Altura ajustada */
+  font-size: 16px; /* Ajustando o tamanho da fonte */
+  display: flex;
+  align-items: center; /* Alinhamento vertical */
+  justify-content: center; /* Alinhamento horizontal */
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+    
+}
+

@@ -1,0 +1,114 @@
+<div class="adjust-table-width">
+  <form [formGroup]="userForm" class="userForm">
+    <div fxLayout="row wrap" fxLayoutGap="15px">
+      <div fxFlex="45" class="input-container">
+        <label for="firstName">First Name</label>
+        <input id="firstName" formControlName="firstName" type="text" pInputText/>
+      </div>
+      <div fxFlex="45" class="input-container">
+        <label for="lastName">Last Name</label>
+        <input id="lastName" formControlName="lastName" type="text" pInputText/>
+      </div>
+    </div>
+    
+    <div fxLayout="row wrap" fxLayoutGap="15px">
+      <div fxFlex="30" class="input-container">
+        <label for="email">Email</label>
+        <input id="email" formControlName="email" type="email" pInputText/>
+      </div>
+      <div fxFlex="28" class="input-container">
+        <label for="phone">Phone</label>
+        <input id="phone" formControlName="phone" type="number" pInputText/>
+      </div>
+      <div fxFlex="30" class="input-container">
+        <label for="birthday">Birthday</label>
+        <input id="birthday" formControlName="birthday" type="date" pInputText/>
+      </div>
+    </div>
+    
+    <div fxLayout="row wrap" fxLayoutGap="15px">
+      <div fxFlex="45" class="input-container">
+        <label for="login">Login</label>
+        <input id="login" formControlName="login" type="text" pInputText/>
+      </div>
+      <div *ngIf="editUser?.id == null" fxFlex="45" class="input-container">
+        <label for="password">Password</label>
+        <input id="password" formControlName="password" type="password" pInputText/>
+      </div>
+    </div>
+    
+    <div fxLayoutAlign="center">
+      <button class="button-submit"
+        fxFlex="40"
+        style="width: 60%; margin-bottom: 20px"
+        type="button"
+        pButton
+        (click)="submit()">
+        Submit
+      </button>
+    </div>
+  </form>
+
+
+  <div *ngIf="!editUser?.id">
+    <p-table [value]="cars" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Year</th>
+          <th>License Plate</th>
+          <th>Model</th>
+          <th>Color</th>
+          <th></th>
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="body" let-rowData let-car>
+        <tr>
+          <td>{{ car.year }}</td>
+          <td>{{ car.licensePlate }}</td>
+          <td>{{ car.model }}</td>
+          <td>{{ car.color }}</td>
+          <td>
+            <button
+              type="button"
+              pButton
+              severity="danger"
+              icon="pi pi-trash"
+              (click)="deleteCar(car)">
+            </button>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+
+    <form [formGroup]="carForm" class="carform">
+      <div fxLayout="row wrap" fxLayoutGap="15px">
+        <p-floatLabel fxFlex="20">
+          <input id="year" type="number" pInputText formControlName="year"/>
+          <label for="year">Year</label>
+        </p-floatLabel>
+        <p-floatLabel fxFlex="20">
+          <input id="licensePlate" type="text" pInputText formControlName="licensePlate"/>
+          <label for="licensePlate">License Plate</label>
+        </p-floatLabel>
+        <p-floatLabel fxFlex="20">
+          <input id="model" type="text" pInputText formControlName="model"/>
+          <label for="model">Model</label>
+        </p-floatLabel>
+        <p-floatLabel fxFlex="20">
+          <input id="color" type="text" pInputText formControlName="color"/>
+          <label for="color">Color</label>
+        </p-floatLabel>
+        <button
+          type="button"
+          pButton
+          pRipple
+          icon="pi pi-plus"
+          (click)="addCar()">
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<p-toast></p-toast>

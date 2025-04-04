@@ -1,0 +1,32 @@
+<div class="adjust-table-width">
+  <form [formGroup]="carForm" class="carForm">
+    <div>
+      <p-floatLabel fxFlex>
+        <input fxFlex id="year" type="number" pInputText formControlName="year" />
+        <label for="year">Year</label>
+      </p-floatLabel>
+      <p-floatLabel fxFlex>
+        <input fxFlex id="licensePlate" type="text" pInputText formControlName="licensePlate" />
+        <label for="licensePlate">License Plate</label>
+      </p-floatLabel>
+      <p-floatLabel fxFlex>
+        <input fxFlex id="model" type="text" pInputText formControlName="model" />
+        <label for="model">Model</label>
+      </p-floatLabel>
+      <p-floatLabel fxFlex>
+        <input fxFlex id="color" type="text" pInputText formControlName="color" />
+        <label for="color">Color</label>
+      </p-floatLabel>
+      <button
+        type="button"
+        pButton
+        icon="pi pi-plus"
+        label="Add Car" 
+        
+        (click)="submit()">
+      </button>
+      
+    </div>
+  </form>
+</div>
+<p-toast></p-toast>

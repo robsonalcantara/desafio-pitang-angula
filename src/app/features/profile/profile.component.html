@@ -1,0 +1,36 @@
+<p-card fxFlex class="profile-card" fxLayout="column" fxLayoutAlign="center center">
+  <ng-template pTemplate="header">
+    <div class="profile-header">Profile</div>
+  </ng-template>
+
+  <div class="profile-container" fxLayout="column" fxLayoutAlign="center center">
+    <!-- Foto do usuário -->
+    <div class="profile-photo">
+      <p-avatar [image]="selectedImage || 'https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png'" size="xlarge"></p-avatar>
+    </div>
+
+    <!-- Informações do usuário -->
+    <p-panel header="User Information" class="user-info-panel">
+      <div class="user-data">
+        <p><strong>Name:</strong> {{ user.firstName }} {{ user.lastName }}</p>
+        <p><strong>E-mail:</strong> {{ user.email }}</p>
+        <p><strong>Phone:</strong> {{ user.phone }}</p>
+        <p><strong>Birthday:</strong> {{ user.birthday | date: 'dd/MM/yyyy' }}</p>
+        <p><strong>Created at:</strong> {{ user.createdAt | date: 'dd/MM/yyyy' }}</p>
+        <p><strong>Last Login:</strong> {{ user.lastLogin | date: 'dd/MM/yyyy' }}</p>
+      </div>
+    </p-panel>
+
+    <!-- Lista de carros -->
+    <p-panel *ngIf="user?.cars?.length" header="Cars" class="car-panel">
+      <ul class="car-list">
+        <li *ngFor="let car of user.cars">
+          🚗 <strong>{{ car.year }} - {{ car.model }}</strong> 
+          <span class="car-details">({{ car.licensePlate }}) - {{ car.color }}</span>
+        </li>
+      </ul>
+    </p-panel>
+  </div>
+</p-card>
+
+<p-toast></p-toast>

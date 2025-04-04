@@ -1,0 +1,11 @@
+.auth-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre os botões */
+ }
+
+.logout-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaçamento entre o botão e o avatar */
+ }

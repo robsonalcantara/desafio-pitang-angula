@@ -1,0 +1,47 @@
+/* Estilização geral do formulário */
+.userForm, .carform {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  background: #f8f9fa; /* Cinza claro */
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* Melhorando a tabela */
+p-table {
+  margin-top: 20px;
+}
+
+th {
+  text-align: left;
+  padding: 8px;
+}
+
+td {
+  padding: 8px;
+}
+
+.button-submit{
+  width: 120px; /* Reduzindo o tamanho do botão */
+  height: 40px; /* Altura ajustada */
+  font-size: 16px; /* Ajustando o tamanho da fonte */
+  display: flex;
+  align-items: center; /* Alinhamento vertical */
+  justify-content: center; /* Alinhamento horizontal */
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: all 0.3s ease-in-out;
+}
